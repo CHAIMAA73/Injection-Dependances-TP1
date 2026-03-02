@@ -5,5 +5,6 @@
    <bean id="d" class="net.chaimaa.dao.DaoImpl"></bean>
     <bean id="metier" class="net.chaimaa.metier.MetierImpl">
       <property name="dao" ref="d"></property>
+      <constructor-arg ref="d"></constructor-arg>
     </bean>
 </beans>

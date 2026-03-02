@@ -1,7 +1,9 @@
 package net.chaimaa.ext;
 
 import net.chaimaa.dao.IDao;
+import org.springframework.stereotype.Component;
 
+//@Component("d")
 public class DaoImplV2 implements IDao {
     @Override
     public double getData() {

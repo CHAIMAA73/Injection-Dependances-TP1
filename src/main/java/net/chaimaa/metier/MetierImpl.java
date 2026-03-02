@@ -1,15 +1,21 @@
 package net.chaimaa.metier;
 
 import net.chaimaa.dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("metier")
 public class MetierImpl implements IMetier {
+    @Autowired
+    @Qualifier("d")
     private IDao dao; //Couplage faible
     /**
      * Pour injecter dans l'attribut dao
      * un objet d'une classe qui implémente l'interface IDao
      * au moment de l'instantiation
      */
-    public MetierImpl(IDao dao) {
+    public MetierImpl(@Qualifier("d") IDao dao) {
         this.dao = dao;
     }
 
